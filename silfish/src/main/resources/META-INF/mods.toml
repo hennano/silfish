@@ -1,0 +1,25 @@
+modLoader="javafml" #mandatory
+loaderVersion="[31,)" #mandatory (31 is current forge version)
+[[mods]] #mandatory
+modId="silfishmod" #mandatory
+version="0.1.0" #mandatory
+displayName="Silfish Mod" #mandatory
+displayURL="https://hennabatch.net" #optional
+#logoFile="examplemod.png" #optional
+credits="" #optional
+authors="ScTi" #optional
+description='''
+This mod add Elebits
+'''
+[[dependencies.silfishmod]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[31,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.silfishmod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+    side="BOTH"
