@@ -39,8 +39,18 @@ public class BatteryItem extends Item{
 			nbt = new CompoundNBT();
 		}
 		nbt.putInt("enelgy", Math.min(this.getEnergy(stack) + volume, this.getCapacity(stack)));
+		stack.setTag(nbt);
 	}
 
+	@Override
+	public boolean showDurabilityBar(ItemStack stack) {
+		return true;
+	}
+
+	@Override
+	public double getDurabilityForDisplay(ItemStack stack) {
+		return 1.0 - ((double)this.getEnergy(stack) / (double)this.getMaxDamage(stack));
+	}
 
 	@Override
 	@OnlyIn(Dist.CLIENT)
@@ -48,6 +58,4 @@ public class BatteryItem extends Item{
 		super.addInformation(stack, worldIn, tooltip, flagIn);
 		tooltip.add(new StringTextComponent("enelgy:" + this.getEnergy(stack) + "/" + this.getCapacity(stack)));
 	}
-
-
 }
