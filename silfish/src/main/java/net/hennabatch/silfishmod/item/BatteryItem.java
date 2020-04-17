@@ -49,7 +49,7 @@ public class BatteryItem extends Item{
 
 	@Override
 	public double getDurabilityForDisplay(ItemStack stack) {
-		return 1.0 - ((double)this.getEnergy(stack) / (double)this.getMaxDamage(stack));
+		return 1.0 - ((double)this.getEnergy(stack) / (double)this.getCapacity(stack));
 	}
 
 	@Override

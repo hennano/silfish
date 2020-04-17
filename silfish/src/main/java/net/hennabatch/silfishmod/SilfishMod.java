@@ -4,9 +4,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.hennabatch.silfishmod.block.SilfishBlocks;
+import net.hennabatch.silfishmod.entity.SilfishEntities;
 import net.hennabatch.silfishmod.item.SilfishItems;
 import net.hennabatch.silfishmod.util.Reference;
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -51,12 +53,10 @@ public class SilfishMod {
     		event.getRegistry().registerAll(SilfishBlocks.register());
     		logger.info("Block registred.");
     	}
-    	/*
     	@SubscribeEvent
     	public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event) {
-    		event.getRegistry().registerAll(ElebitsEntities.register());
+    		event.getRegistry().registerAll(SilfishEntities.register());
     		logger.info("Entity registred.");
     	}
-    	*/
     }
 }
