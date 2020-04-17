@@ -3,8 +3,10 @@ package net.hennabatch.silfishmod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import net.hennabatch.silfishmod.block.SilfishBlocks;
 import net.hennabatch.silfishmod.item.SilfishItems;
 import net.hennabatch.silfishmod.util.Reference;
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -43,14 +45,12 @@ public class SilfishMod {
     		event.getRegistry().registerAll(SilfishItems.register());
     		logger.info("Item registred.");
     	}
-    	/*
     	@SubscribeEvent
     	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
 
-    		event.getRegistry().registerAll(ElebitsBlocks.register());
+    		event.getRegistry().registerAll(SilfishBlocks.register());
     		logger.info("Block registred.");
     	}
-    	*/
     	/*
     	@SubscribeEvent
     	public static void registerEntities(final RegistryEvent.Register<EntityType<?>> event) {
