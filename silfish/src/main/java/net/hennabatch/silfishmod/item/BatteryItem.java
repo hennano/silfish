@@ -13,10 +13,17 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class BatteryItem extends Item{
 
-	public BatteryItem(Properties properties) {
+	private final EnumBatteryType batteryType;
+
+	public BatteryItem(EnumBatteryType type,Properties properties) {
 		super(properties);
+		this.batteryType = type;
 	}
 
+	//容量の取得
+	public int getCapacity(ItemStack stack) {
+		return this.batteryType.getCapacity();
+	}
 
 	//エネルギー量の取得
 	public int getEnergy(ItemStack stack) {
