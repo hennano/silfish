@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -15,7 +16,7 @@ public class BatteryItem extends Item{
 
 	private final EnumBatteryType batteryType;
 
-	public BatteryItem(EnumBatteryType type,Properties properties) {
+	public BatteryItem(EnumBatteryType type, Properties properties) {
 		super(properties);
 		this.batteryType = type;
 	}
@@ -45,6 +46,7 @@ public class BatteryItem extends Item{
 	@OnlyIn(Dist.CLIENT)
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		super.addInformation(stack, worldIn, tooltip, flagIn);
+		tooltip.add(new StringTextComponent("enelgy:" + this.getEnergy(stack) + "/" + this.getCapacity(stack)));
 	}
 
 
