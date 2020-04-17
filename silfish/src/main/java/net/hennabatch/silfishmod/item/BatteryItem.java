@@ -37,7 +37,7 @@ public class BatteryItem extends Item{
 		if(nbt == null) {
 			nbt = new CompoundNBT();
 		}
-		nbt.putInt("enelgy", this.getEnergy(stack) + volume);
+		nbt.putInt("enelgy", Math.min(this.getEnergy(stack) + volume, this.getCapacity(stack)));
 	}
 
 
